@@ -2,19 +2,185 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>내가 직접 웹사이트를 만든 이유</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비전공 바이오 연구원을 위한 마이 포트폴리오 HTML/CSS 치트키 가이드</title>
+    <style>
+        /* 아영님의 흑백 시크 톤앤매너 동기화 */
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background-color: #ffffff;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 2.0em;
+            color: #000000;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 12px;
+            letter-spacing: -1px;
+        }
+        
+        h2 {
+            font-size: 1.4em;
+            color: #000000;
+            border-left: 4px solid #000000;
+            padding-left: 10px;
+            margin-top: 45px;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+        
+        h3 {
+            font-size: 1.15em;
+            color: #1a1a1a;
+            margin-top: 30px;
+            border-bottom: 1px solid #eeeeee;
+            padding-bottom: 5px;
+        }
+        
+        .meta-info {
+            background-color: #ffffff;
+            padding: 15px 0;
+            border-bottom: 1px solid #dddddd;
+            margin-bottom: 35px;
+        }
+        
+        .meta-info p {
+            margin: 6px 0;
+            font-size: 0.95em;
+        }
+
+        /* 💡 핵심 개념 상자 */
+        .rule-box {
+            background-color: #f9f9f9;
+            border-left: 3px solid #1a1a1a;
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-size: 0.95em;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* 💻 코드 강조 상자 */
+        pre {
+            background-color: #ffffff;
+            border: 1px solid #1a1a1a;
+            padding: 15px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            font-weight: bold;
+            font-size: 0.95em;
+        }
+        
+        .highlight {
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #000000;
+            font-weight: bold;
+            padding: 1px 4px;
+        }
+        
+        /* 🏠 하단 홈 버튼 스타일 */
+        .home-btn {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 12px 24px;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95em;
+            transition: all 0.2s ease;
+            border: 1px solid #1a1a1a;
+        }
+        
+        .home-btn:hover {
+            background-color: #ffffff;
+            color: #1a1a1a;
+        }
+    </style>
 </head>
 <body>
-    <h1>첫 게시물 기념! 제 다짐을 적어보겠습니다.</h1>
-    <p><strong>작성일:</strong> 2026년 6월 29일</p>
-    <p>
-        앞으로 HTML 공부하면서 이 웹사이트를 잘 꾸며볼게요.<br>
-        온전히 제 힘으로만 이 웹사이트를 완성 시키는 것이 제 목표입니다.<br>
-        지금은 아무것도 없는 하얀 바탕에 텅텅 비어있지만 나중에
-        이 웹사이트를 보는 사람들에게 가독성 좋은 정보를 주고 싶습니다.<br>
-        그리고 온전히 제 글에만 집중할 수 있는 블로그를 원했어요. 앞으로 잘 부탁드립니다! 기대해주세요.
+
+    <h1>비전공 바이오 연구원을 위한 마이 포트폴리오 HTML/CSS 치트키 가이드</h1>
+    
+    <div class="meta-info">
+        <p><strong>작성 목적 :</strong> 직접 하드코딩한 연구 데이터 아카이브의 유지보수 및 문법 리마인드를 위한 개발 로그</p>
+        <p><strong>포스팅 작성자 :</strong> 양아영 (연구원 겸 깃허브 마스터)</p>
+    </div>
+
+    <h2>1. HTML/CSS를 지배하는 2가지 절대 규칙</h2>
+    
+    <div class="rule-box">
+        <strong>규칙 1 : 모든 태그는 '상자 포장'이다 (세트 플레이)</strong><br>
+        HTML은 화면에 텍스트와 그림을 무작정 던지는 게 아니라, 상자에 예쁘게 담아 영역을 지정하는 것입니다. 
+        반드시 <code>&lt;열고&gt; 내용 &lt;/닫고&gt;</code> 형태로 닫는 태그에 슬래시(<code>/</code>)를 쳐서 마침표를 찍어줘야 오류가 나지 않습니다.
+    </div>
+
+    <div class="rule-box">
+        <strong>규칙 2 : 머리(&lt;head&gt;)는 디자인실, 몸통(&lt;body&gt;)은 전시장</strong><br>
+        <ul>
+            <li><code>&lt;head&gt;</code> 안쪽의 <code>&lt;style&gt;</code> : 글자 크기, 테두리 선, 여백, 정렬 등 모든 <strong>시각적 디자인</strong>을 몰아서 기획하는 곳.</li>
+            <li><code>&lt;body&gt;</code> 안쪽 영역 : 화면에 실제로 찍히는 <strong>텍스트 알맹이, 실험 데이터, 이미지, 버튼</strong>이 차례대로 나열되는 전시장.</li>
+        </ul>
+    </div>
+
+    <h2>2. 미래의 내가 보고 바로 써먹는 태그(Tag) 치트키</h2>
+    <p>리포트 수정이나 추가 시 <code>&lt;body&gt;</code> 안에서 가장 많이 쓰게 될 핵심 핵심 물건 상자들입니다.</p>
+
+    <h3>2.1 제목 상자 : &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;</h3>
+    <p>글씨를 굵고 크게 만들어 줄 뿐만 아니라, 검색엔진(구글 등)이나 면접관이 글의 목차 구조를 파악할 수 있게 돕는 이정표입니다.</p>
+    <pre>&lt;h1&gt;가장 큰 대제목 (실험 보고서 전체 타이틀)&lt;/h1&gt;
+&lt;h2&gt;중간 제목 (1. 실험 목적, 2. 결과 및 고찰)&lt;/h2&gt;
+&lt;h3&gt;소제목 (1.1 수용성 세포 제조 프로토콜)&lt;/h3&gt;</pre>
+
+    <h3>2.2 리스트 상자 : &lt;ol&gt;과 &lt;ul&gt; 그리고 한 줄 데이터 &lt;li&gt;</h3>
+    <p>실험 프로토콜을 순서대로 적거나, 결과 항목을 나열할 때 필수적입니다.</p>
+    <pre>&lt;!-- 번호가 자동으로 매겨지는 리스트 (Ordered List) --&gt;
+&lt;ol&gt;
+    &lt;li&gt;1번으로 실행할 프로토콜 내용을 적습니다.&lt;/li&gt;
+    &lt;li&gt;2번으로 실행할 프로토콜 내용을 적습니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- 점(•)으로 나열되는 리스트 (Unordered List) --&gt;
+&lt;ul&gt;
+    &lt;li&gt;주요 시약: LB 배지, DMSO&lt;/li&gt;
+    &lt;li&gt;준비물: 마이크로 파이펫, 큐벳&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+    <h3>2.3 데이터 하이라이트와 원리 설명 상자</h3>
+    <p>중요한 수치를 음영 처리하거나 면접관을 매료시킬 분자 메커니즘을 쏙 집어넣을 때 씁니다.</p>
+    <pre>&lt;!-- 특정 텍스트에만 연한 그레이 음영과 볼드 포인트를 줄 때 --&gt;
+결정계수 값은 &lt;span class="highlight"&gt;R² = 0.9994&lt;/span&gt; 로 매우 높다.
+
+&lt;!-- 디자인실에서 만든 회색 원리 상자를 호출할 때 --&gt;
+&lt;div class="mechanism"&gt;💡 &lt;strong&gt;원리 :&lt;/strong&gt; EDTA는 DNase의 활성을 완전히 억제한다.&lt;/div&gt;</pre>
+
+    <h3>2.4 겔 사진 및 그래프 이미지 소환 : &lt;img&gt;</h3>
+    <p>가장 중요합니다. 닫는 태그가 없는 특수 상자이며, 파일 이름과 확장자를 정확히 매칭해야 엑박이 뜨지 않습니다.</p>
+    <pre>&lt;!-- src="파일명" 을 적고, width로 가로 크기를 제한하여 깨짐을 방지 --&gt;
+&lt;img src="image1.png" alt="대체 텍스트" width="450"&gt;</pre>
+
+    <h2>3. 미래의 내가 데이터를 업데이트하는 3단계 루틴</h2>
+    <ol>
+        <li><strong>텍스트만 바꾸고 싶다 :</strong> <code>&lt;body&gt;</code> 안쪽 구역에서 태그와 태그 사이에 끼어 있는 하얀색 한글 텍스트만 찾아서 지우고 타이핑 후 커밋(Commit)한다.</li>
+        <li><strong>새 프로토콜 단계를 넣고 싶다 :</strong> <code>&lt;ol&gt;</code> 내부에 있는 <code>&lt;li&gt;...&lt;/li&gt;</code> 한 세트를 그대로 복사해서 줄바꿈 한 뒤 내용만 채우면 숫자는 컴퓨터가 알아서 밀어준다.</li>
+        <li><strong>새로운 실험 보고서를 추가하고 싶다 :</strong> 기존 폴더(예: transform) 전체를 복사해서 새 폴더를 파고, 그 안의 <code>index.html</code> 텍스트와 사진 파일명만 갈아 끼우면 디자인실(CSS) 설정은 그대로 복사된다.</li>
+    </ol>
+
+    <p style="text-align: center;">
+        <a href="../../" class="home-btn">🏠 메인 포트폴리오로 돌아가기</a>
     </p>
-    <img src="rose.png" alt="To. dear">
-    <a href="https://ayeongyang.github.io/ayeongyang.github.io/">홈으로 돌아가기</a>
+
 </body>
 </html>
