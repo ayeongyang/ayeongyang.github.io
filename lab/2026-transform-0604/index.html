@@ -6,10 +6,10 @@
     <title>[실습 03] 대장균의 형질전환 및 Efficiency 계산</title>
     <style>
         body {
-            max-width: 650px;       /* 글이 적히는 최대 가로 범위를 650픽셀로 제한 */
+            max-width: 800px;       /* 글이 적히는 최대 가로 범위를 650픽셀로 제한 */
             margin: 40px auto;      /* 상하 여백은 40픽셀, 좌우는 알아서 중앙(auto)으로 정렬 */
             padding: 0 20px;        /* 화면이 아주 작아졌을 때 양옆에 줄 최소한의 여백 */
-            line-height: 1.8;       /* 줄과 줄 사이의 간격을 넓혀서 눈을 편안하게 함 */
+            line-height: 2;       /* 줄과 줄 사이의 간격을 넓혀서 눈을 편안하게 함 */
         }
     </style>
 </head>
@@ -18,7 +18,7 @@
     <h1>🔬 [실습 03] Competent Cell 제작 및 대장균 형질전환(Transformation) Efficiency 분석</h1>
     <p>실험 일자: 2026년 6월 4일</p>
 
-    <hr style="border: 0; border-top: 2px solid #000000; margin: 20px 0;">
+    <hr style="border: 0; border-top: 2px solid #000000; margin: 30px 0;">
 
     <h3>1. 서론 (Introduction)</h3>
     <p>본 실험의 목적은 외부 DNA를 스스로 받아들이지 못하는 대장균을 화학적 처리를 통해 수용성 세포(Competent Cell)로 유도하고, 플라스미드 벡터를 세포 내로 대량 주입하는 형질전환(Transformation) 공정을 이해하는 것입니다. 실험을 통해 얻은 콜로니 수로부터 최종 형질전환 효율(Transformation Efficiency)을 정확히 산출하고 데이터의 신뢰성을 검증합니다.</p>
@@ -27,7 +27,7 @@
         <li><strong>pUC-GID 벡터:</strong> 암피실린(Ampicillin) 저항성 유전자를 포함하여, 해당 플라스미드를 확보한 대장균만을 선별 유도합니다.</li>
     </ul>
 
-    <hr style="border: 0; border-top: 2px solid #eeeeee; margin: 30px 0;">
+    <hr style="border: 0; border-top: 1px solid #000000; margin: 30px 0;">
 
     <h3>2. 실험 재료 및 방법 (Materials & Methods)</h3>
     <p><strong>[주요 재료]</strong> LB 배지, 2X TSS Buffer (MgSO4, PEG-6000 포함), DMSO, 멸균수, 얼음, 42℃ 항온수조</p>
@@ -39,12 +39,10 @@
         <li>배양액의 흡광도 OD600 값이 0.3~0.4 수준에 도달했을 때 성장을 급격히 중단시켰습니다.
             <br><em>*원리: 세포 분열이 가장 활발한 대수생장기(Exponential phase)에는 세포막이 유동적이고 세포벽이 완전히 완고해지지 않아, 열 충격에 최적의 반응성을 나타냅니다.</em>
         </li>
-        <br>
         <li>배양액을 15mL 튜브로 옮겨 얼음 위에서 10분간 방치한 후, 4℃ 상태에서 4,000rpm으로 5분간 원심분리하여 세포를 침전시켰습니다.</li>
         <li>상층액을 날리고 멸균 처리된 차가운 LB 배지 625µL를 첨가해 세포 펠릿을 부드럽게 재부유시켰습니다.
             <br><em>*원리: 후속 단계의 2X TSS 완충액을 최종 1X 농도로 희석하기 위함입니다. 극저온 상태를 유지해야 세포막의 투과성 변형을 억제합니다.</em>
         </li>
-        <br>
         <li>차가운 상태의 2X TSS Buffer 500µL를 첨가하였습니다.
             <br><em>*원리: TSS 내의 PEG는 주변 수화층을 탈수시켜 DNA가 막 표면에 밀착하도록 돕고, MgSO4는 DNA의 음전하를 중화하여 막 통과 능력을 향상시킵니다.</em>
         </li>
@@ -61,21 +59,19 @@
         <li>얼음 위에서 30분간 조용히 방치하였습니다.
             <br><em>*원리: 저온 조건 하에서 운동성을 잃은 DNA가 세포막 표면에 안정적으로 흡착 복합체를 형성하는 단계입니다.</em>
         </li>
-        <br>
         <li>흔들림 없이 42℃ 항온수조에서 정확히 40초간 열 충격(Heat Shock)을 가했습니다.
             <br><em>*원리: 순간 고온에 의해 유도된 나노 구멍(Transient pore)을 통해 외부 플라스미드가 세포 안으로 강제 유입됩니다.</em>
         </li>
         <li>얼음 위에 즉시 2~5분간 꽂아 급속 냉각을 수행하였습니다.
             <br><em>*원리: 열린 막 구조를 즉각 닫아 진입한 플라스미드의 누출을 봉쇄하고 세포 손상을 회복합니다.</em>
         </li>
-        <br>
         <li>항생제가 없는 순수 LB 배지 500µL를 첨가하고 37℃에서 1시간 동안 회복 배양(Recovery)을 진행했습니다.
             <br><em>*원리: 플라스미드 내의 항생제 저항성 단백질이 실제로 발현 및 축적될 시간을 부여하여 선택 배지에서의 생존율을 높입니다.</em>
         </li>
         <li>항생제 고체 배지(LB Plate)에 300µL를 분주하여 고르게 도말한 뒤 배양하였습니다.</li>
     </ol>
-
-    <hr style="border: 0; border-top: 2px solid #eeeeee; margin: 30px 0;">
+    
+    <hr style="border: 0; border-top: 1px solid #000000; margin: 30px 0;">
 
     <h3>3. 결과 및 고찰 (Results & Discussion)</h3>
 
@@ -103,14 +99,12 @@
     <p><img src="image1.png" width="380" alt="대장균 콜로니 형상"></p>
     <p><em>*참고: [그림 1] 항생제 배지 상에서 선별 성장한 pUC-GID 형질전환 대장균 콜로니 형상</em></p>
 
-    <hr style="border: 0; border-top: 2px solid #dddddd; margin: 30px 0;">
+    <hr style="border: 0; border-top: 1px solid #000000; margin: 30px 0;">
 
     <h4>② 결과 해석 및 고찰 (Discussion)</h4>
     
     <p><strong>[1] 산출된 효율(TE)의 학술적 의의</strong><br>
     본 실험에서 도출된 최종 형질전환 효율인 5.796 × 10^5 CFU/µg은 일반적인 화학적 수용성 세포(Chemical Competent Cell) 제조 공정에서 기대할 수 있는 유효 신뢰구간(10^5 ~ 10^7 CFU/µg)에 정확히 부합하는 정상적인 수치입니다. 이는 대장균 세포가 외부 플라스미드 벡터를 안정적으로 수용했음을 뜻하며, 후속 유전자 발현 및 복제 실험에 바로 활용할 수 있는 높은 퀄리티의 컴셀이 유도되었음을 의미합니다.</p>
-
-    <hr style="border: 0; border-top: 2px solid #eeeeee; margin: 20px 0;">
 
     <p><strong>[2] 실험 성공 요인 및 오차 제어 분석</strong><br>
     플레이트 상의 콜로니 분포가 한곳에 뭉치지 않고 균일하게 독립된 형태로 자라났으며, 원치 않는 균주의 오염(Smearing)이 발견되지 않았습니다. 이러한 결과가 나온 핵심 요인은 두 가지로 분석됩니다.</p>
