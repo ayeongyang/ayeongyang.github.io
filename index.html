@@ -25,7 +25,7 @@
             padding-left: 20px;
         }
         li {
-            margin-bottom: 15px; /* 모바일 터치가 편하도록 간격을 살짝 넓혔어요 */
+            margin-bottom: 15px; 
             position: relative; 
         }
         
@@ -35,25 +35,26 @@
             cursor: pointer;
         }
 
-        /* 0초만에 즉시 뜨는 예쁜 검은색 미리보기 상자 */
+        /* ⚡ 요청하신 옅은 회색 버전의 미리보기 상자 */
         .preview-box {
             display: none; 
             position: absolute;
             left: 0;
             top: 28px;
             width: 90%;
-            max-width: 400px;
-            background-color: #2b2b2b;
-            color: #ffffff;
+            max-width: 420px;
+            background-color: #f1f1f1; /* 옅은 회색 */
+            color: #333333;            /* 회색 배경에 잘 보이는 진한 글씨 */
             padding: 10px 14px;
+            border: 1px solid #cccccc; /* 깔끔한 테두리 선 */
             border-radius: 6px;
             font-size: 0.85em;
             line-height: 1.4;
             z-index: 10;
-            box-shadow: 0px 4px 12px rgba(0,0,0,0.25);
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
         }
 
-        /* 💻 컴퓨터(PC) 환경에서는 마우스만 올려도 즉시 뜨게 하는 마법 */
+        /* 💻 [PC 전용 스타일] 마우스가 있는 기기에서는 올리기만 해도 뜨게 고정 */
         @media (pointer: fine) {
             li:hover .preview-box {
                 display: block;
@@ -62,25 +63,30 @@
     </style>
 
     <script>
-        // 📱 모바일/태블릿용: 터치했을 때 바로 안 넘어가고 요약을 먼저 보여주는 함수
-        function touchLink(event, url, boxId) {
+        // 📱 [모바일·태블릿 전용 함수] 터치 환경에서만 두 번 터치 시스템 작동
+        function touchLink(event, boxId) {
+            // 현재 기기가 마우스를 쓰는 PC 환경인지 확인 (PC라면 이 함수를 통째로 건너뜀!)
+            if (window.matchMedia("(pointer: fine)").matches) {
+                return; 
+            }
+
             var box = document.getElementById(boxId);
             
-            // 만약 미리보기 상자가 안 켜져 있다면?
+            // 모바일에서 요약 상자가 안 켜져 있는 상태라면?
             if (box.style.display !== 'block') {
-                event.preventDefault(); // 1. 링크로 넘어가는 걸 강제로 막는다!
+                event.preventDefault(); // 1. 다음 페이지 이동을 즉시 막는다!
                 
-                // 2. 다른 열려있는 미리보기 상자들은 싹 닫아준다 (깔끔하게)
+                // 2. 다른 열려있는 상자들은 싹 닫는다
                 var allBoxes = document.querySelectorAll('.preview-box');
                 allBoxes.forEach(function(b) { b.style.display = 'none'; });
                 
-                // 3. 이 항목의 미리보기 상자만 즉시 띄운다!
+                // 3. 이 상자만 보여준다!
                 box.style.display = 'block';
             }
-            // 이미 미리보기 상자가 켜져 있는 상태에서 또 터치하면 원래대로 링크(URL)로 이동합니다!
+            // 이미 켜져 있다면 원래 기능대로 다음 페이지로 넘어감 (터치 2번째 단계)
         }
 
-        // 화면 다른 곳을 아무 데나 터치하면 열려있던 미리보기 상자가 닫히는 센스 기능
+        // 모바일에서 화면 빈 곳 터치하면 상자 닫히는 기능
         document.addEventListener('click', function(e) {
             if (!e.target.classList.contains('preview-link')) {
                 var allBoxes = document.querySelectorAll('.preview-box');
@@ -105,15 +111,15 @@
     <h3>🔬 연구 및 논문 기록 (Research Logs)</h3>
     <ul>
         <li>
-            [2026-07] <a href="paper/paper1.html" class="preview-link" onclick="touchLink(event, this.href, 'p1')">The Hallmarks of Aging 논문 요약 및 리뷰 - 작성 전</a>
+            [2026-07] <a href="paper/paper1.html" class="preview-link" onclick="touchLink(event, 'p1')">The Hallmarks of Aging 논문 요약 및 리뷰 - 작성 전</a>
             <div id="p1" class="preview-box">💡 세포 노화의 9가지 주요 분자학적 특징과 메커니즘을 분석한 논문 리뷰입니다.</div>
         </li>
         <li>
-            [2026-07] <a href="paper/paper2.html" class="preview-link" onclick="touchLink(event, this.href, 'p2')">Aging and aging-related diseases... 논문 요약 및 리뷰 - 작성 전</a>
+            [2026-07] <a href="paper/paper2.html" class="preview-link" onclick="touchLink(event, 'p2')">Aging and aging-related diseases... 논문 요약 및 리뷰 - 작성 전</a>
             <div id="p2" class="preview-box">💡 노화가 진행됨에 따라 발생하는 만성 질환들의 발병 기전을 정리한 자료입니다.</div>
         </li>
         <li>
-            [2026-08] <a href="book/book1.html" class="preview-link" onclick="touchLink(event, this.href, 'b1')">[전공서적] Cell Signaling 세포 신호전달 메커니즘 정리 - 작성 전</a>
+            [2026-08] <a href="book/book1.html" class="preview-link" onclick="touchLink(event, 'b1')">[전공서적] Cell Signaling 세포 신호전달 메커니즘 정리 - 작성 전</a>
             <div id="b1" class="preview-box">💡 리간드-수용체 결합부터 세포 내 신호 전달 경로(MAPK, JAK-STAT 등)의 핵심 요약본입니다.</div>
         </li>
     </ul>
@@ -121,15 +127,15 @@
     <h3>🥼 실험 및 실습 노트 (Lab Notebook)</h3>
     <ul>
         <li>
-            [2026-04-30] <a href="lab/2026-spectro-0430/" class="preview-link" onclick="touchLink(event, this.href, 'l1')">[실습 01] 분광광도계를 이용한 식용색소의 농도 측정 및 정량 분석 - 작성 중</a>
+            [2026-04-30] <a href="lab/2026-spectro-0430/" class="preview-link" onclick="touchLink(event, 'l1')">[실습 01] 분광광도계를 이용한 식용색소의 농도 측정 및 정량 분석 - 작성 중</a>
             <div id="l1" class="preview-box">💡 UV-Vis 분광광도계를 사용해 미지 시료의 흡광도를 측정하고, Beer-Lambert 법칙을 이용해 농도를 정량하는 실습입니다.</div>
         </li>
         <li>
-            [2026-05-26] <a href="lab/2026-plasmid-0526/" class="preview-link" onclick="touchLink(event, this.href, 'l2')">[실습 02] 플라스미드 DNA 추출 및 전기영동 실습 - 작업 중</a>
+            [2026-05-26] <a href="lab/2026-plasmid-0526/" class="preview-link" onclick="touchLink(event, 'l2')">[실습 02] 플라스미드 DNA 추출 및 전기영동 실습 - 작업 중</a>
             <div id="l2" class="preview-box">💡 Alkaline Lysis법을 이용해 대장균에서 플라스미드 DNA를 추출하고, Agarose gel 전기영동으로 크기를 확인하는 과정입니다.</div>
         </li>
         <li>
-            [2026-06-29] <a href="lab/2026-transform-0604/" class="preview-link" onclick="touchLink(event, this.href, 'l3')">[실습 03] 대장균 형질전환(Transformation) 및 효율 분석</a>
+            [2026-06-29] <a href="lab/2026-transform-0604/" class="preview-link" onclick="touchLink(event, 'l3')">[실습 03] 대장균 형질전환(Transformation) 및 효율 분석</a>
             <div id="l3" class="preview-box">💡 DH5-alpha 대장균 수용성 세포를 직접 제작하고, pUC-GID 플라스미드를 넣어 형질전환 효율(5.796x10^5 CFU/µg)을 산출한 리포트입니다.</div>
         </li>
     </ul>
@@ -138,7 +144,7 @@
     <p>바이오 데이터 핸들링을 위한 프로그래밍 학습 기록입니다.</p>
     <ul>
         <li>
-            [2026-06-29] <a href="post/post1.html" class="preview-link" onclick="touchLink(event, this.href, 't1')">비전공 바이오 연구원을 위한 마이 포트폴리오 HTML/CSS 가이드</a>
+            [2026-06-29] <a href="post/post1.html" class="preview-link" onclick="touchLink(event, 't1')">비전공 바이오 연구원을 위한 마이 포트폴리오 HTML/CSS 가이드</a>
             <div id="t1" class="preview-box">💡 비전공 바이오 학과 학생이 무작정 깃허브 페이지와 HTML을 이용해 포트폴리오를 만들며 깨달은 팁 모음입니다.</div>
         </li>
     </ul>
@@ -147,7 +153,7 @@
     <p>시행착오를 통해 배우고 성장한 점들을 기록합니다.</p>
     <ul>
         <li>
-            [2026-06-29] <a href="review/review1.html" class="preview-link" onclick="touchLink(event, this.href, 'r1')">바닥부터 웹사이트를 구축하며 느낀 프로세스의 중요성</a>
+            [2026-06-29] <a href="review/review1.html" class="preview-link" onclick="touchLink(event, 'r1')">바닥부터 웹사이트를 구축하며 느낀 프로세스의 중요성</a>
             <div id="r1" class="preview-box">💡 하얀 백지 상태에서 출발해 단 하루 만에 나만의 포트폴리오 틀을 짜며 느낀 성취감과 시작에 대한 두려움을 극복한 일기입니다.</div>
         </li>
     </ul>
