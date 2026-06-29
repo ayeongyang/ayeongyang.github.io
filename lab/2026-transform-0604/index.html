@@ -5,93 +5,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>대장균 형질전환 및 효율(Transformation Efficiency) 분석</title>
     <style>
+        /* 전반적인 흑백 톤앤매너 세팅 */
         body {
             font-family: 'Malgun Gothic', sans-serif;
-            line-height: 1.6;
-            color: #333;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background-color: #ffffff;
             max-width: 800px;
-            margin: 30px auto;
+            margin: 40px auto;
             padding: 0 20px;
         }
+        
         h1 {
-            color: #2c3e50;
-            border-bottom: 2px solid #34495e;
-            padding-bottom: 10px;
+            font-size: 2.0em;
+            color: #000000;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 12px;
+            letter-spacing: -1px;
         }
+        
         h2 {
-            color: #2980b9;
-            margin-top: 35px;
-            border-bottom: 1px solid #ddd;
+            font-size: 1.4em;
+            color: #000000;
+            border-left: 4px solid #000000;
+            padding-left: 10px;
+            margin-top: 45px;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+        
+        h3 {
+            font-size: 1.15em;
+            color: #1a1a1a;
+            margin-top: 30px;
+            border-bottom: 1px solid #eeeeee;
             padding-bottom: 5px;
         }
-        h3 {
-            color: #16a085;
-            margin-top: 25px;
-            border-bottom: 1px dashed #e0e0e0;
-            padding-bottom: 3px;
-        }
+        
+        /* 인적사항 안내 상자 */
         .meta-info {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-radius: 5px;
-            border-left: 4px solid #2980b9;
-            margin-bottom: 30px;
+            background-color: #ffffff;
+            padding: 15px 0;
+            border-bottom: 1px solid #dddddd;
+            margin-bottom: 35px;
         }
+        
         .meta-info p {
-            margin: 5px 0;
+            margin: 6px 0;
             font-size: 0.95em;
         }
+        
         ol, ul {
             padding-left: 20px;
         }
+        
         li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
+        
+        /* 💡 원리 설명 상자 (연한 그레이 톤으로 정갈하게 배치) */
         .mechanism {
-            background-color: #f0f7fc;
-            border-left: 3px solid #2980b9;
-            padding: 8px 12px;
-            margin-top: 5px;
+            background-color: #f9f9f9;
+            border-left: 3px solid #777777;
+            padding: 10px 15px;
+            margin-top: 8px;
             font-size: 0.92em;
-            color: #34495e;
+            color: #444444;
             border-radius: 0 4px 4px 0;
         }
+        
+        /* 📊 수식 Box */
         .formula-box {
-            background-color: #f8f9fa;
-            border: 1px solid #e2e8f0;
-            border-radius: 6px;
-            padding: 15px;
-            margin: 15px 0;
+            background-color: #ffffff;
+            border: 1px solid #1a1a1a;
+            padding: 18px;
+            margin: 20px 0;
             font-family: 'Courier New', Courier, monospace;
             text-align: center;
             font-size: 1.1em;
             font-weight: bold;
+            letter-spacing: -0.5px;
         }
+        
+        /* 📝 계산 과정 Box */
         .calculation-box {
-            background-color: #f1f2f6;
-            padding: 20px;
-            border-radius: 6px;
-            border: 1px solid #dcdde1;
-            margin-top: 15px;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            padding: 25px;
+            margin-top: 20px;
         }
+        
+        .calculation-box h4 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #000000;
+            border-bottom: 1px solid #eeeeee;
+            padding-bottom: 4px;
+        }
+        
         .highlight {
-            background-color: #fff3cd;
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #000000;
             font-weight: bold;
-            padding: 2px 4px;
-            border-radius: 3px;
+            padding: 1px 4px;
         }
+        
+        /* 🏠 하단 홈 버튼 (시크한 블랙 버튼 스타일) */
         .home-btn {
             display: inline-block;
-            margin-top: 40px;
-            padding: 10px 20px;
-            background-color: #2c3e50;
-            color: white;
+            margin-top: 50px;
+            padding: 12px 24px;
+            background-color: #1a1a1a;
+            color: #ffffff;
             text-decoration: none;
-            border-radius: 5px;
             font-weight: bold;
+            font-size: 0.95em;
+            transition: all 0.2s ease;
+            border: 1px solid #1a1a1a;
         }
+        
         .home-btn:hover {
-            background-color: #34495e;
+            background-color: #ffffff;
+            color: #1a1a1a;
+        }
+        
+        .img-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .img-container img {
+            border: 1px solid #1a1a1a;
+            padding: 6px;
+            background-color: #ffffff;
+        }
+        
+        .img-caption {
+            font-size: 0.88em;
+            color: #666666;
+            margin-top: 8px;
+            display: block;
         }
     </style>
 </head>
@@ -100,60 +153,60 @@
     <h1>대장균 형질전환(Transformation) 및 효율 계산 분석 보고서</h1>
     
     <div class="meta-info">
-        <p><strong>실험 목적:</strong> TSS법을 이용해 Competent Cell을 제조하고, pUC-GID 플라스미드를 도입하여 형질전환 효율(TE)을 분석한다.</p>
-        <p><strong>보고서 작성자:</strong> 학번 2624110086 / 양아영</p>
+        <p><strong>실험 목적 :</strong> TSS법을 이용해 Competent Cell을 제조하고, pUC-GID 플라스미드를 도입하여 형질전환 효율(TE)을 분석한다.</p>
+        <p><strong>보고서 작성자 :</strong> 학번 2624110086 / 양아영</p>
     </div>
 
     <h2>1. 실험 재료 및 방법 (Materials & Methods)</h2>
     
     <h3>1.1 수용성 세포 제조 (Competent Cell Preparation)</h3>
-    <p><strong>주요 시약:</strong> LB tube, 2X TSS Buffer ($MgSO_4$, PEG-6000 포함), DMSO</p>
+    <p><strong>주요 시약 :</strong> LB tube, 2X TSS Buffer ($MgSO_4$, PEG-6000 포함), DMSO</p>
     <ol>
         <li>단일 콜로니로부터 대장균을 37°C에서 밤새 진탕 배양했다(Preculture).</li>
         <li>5mL LB tube 2개에 각각 전날 배양액을 50µL씩 접종하여 본 배양을 진행했다.</li>
         <li>흡광도 $OD_{600}$ 값이 0.3 ~ 0.4에 도달했을 때 성장을 중단하고 즉시 수확했다.
-            <div class="mechanism">💡 <strong>원리:</strong> 세포 분열이 가장 활발한 대수성장기(Exponential phase)에 세포막이 유동적이며 완전히 굳지 않아, $Ca^{2+}$ 처리와 Heat shock 스트레스에 반응하기 가장 좋은 상태가 된다.</div>
+            <div class="mechanism">💡 <strong>원리 :</strong> 세포 분열이 가장 활발한 대수성장기(Exponential phase)에 세포막이 유동적이며 완전히 굳지 않아, $Ca^{2+}$ 처리와 Heat shock 스트레스에 반응하기 가장 좋은 상태가 된다.</div>
         </li>
         <li>15mL tube에 분주한 후, 얼음(Ice) 위에서 10분간 방치했다.</li>
         <li>4°C 조건에서 4,000rpm으로 5분간 원심분리하여 세포를 침전시켰다.</li>
         <li>멸균된 차가운(Ice-cold) LB 배지 625µL를 첨가해 펠렛을 풀어주었다.
-            <div class="mechanism">💡 <strong>원리:</strong> 후속 단계의 2X TSS를 최종 1X로 희석하기 위함이며, 온도를 낮게 유지하여 세포막의 유동성을 제어하고 투과성 변화가 균일하게 일어나도록 유도한다.</div>
+            <div class="mechanism">💡 <strong>원리 :</strong> 후속 단계의 2X TSS를 최종 1X로 희석하기 위함이며, 온도를 낮게 유지하여 세포막의 유동성을 제어하고 투과성 변화가 균일하게 일어나도록 유도한다.</div>
         </li>
         <li>-20°C에 보관된 차가운 2X TSS Buffer 500µL를 첨가했다.
-            <div class="mechanism">💡 <strong>원리:</strong> TSS 내부의 <strong>PEG</strong>는 친수성 고분자로 수화층을 탈수시켜 DNA가 세포막에 접근하도록 돕고, <strong>$MgSO_4$</strong>는 DNA 뼈대의 음전하를 중화하며 Nuclease 활성을 억제해 DNA 분해를 막는다.</div>
+            <div class="mechanism">💡 <strong>원리 :</strong> TSS 내부의 <strong>PEG</strong>는 친수성 고분자로 수화층을 탈수시켜 DNA가 세포막에 접근하도록 돕고, <strong>$MgSO_4$</strong>는 DNA 뼈대의 음전하를 중화하며 Nuclease 활성을 억제해 DNA 분해를 막는다.</div>
         </li>
         <li>실온 보관된 DMSO 125µL를 첨가하고 조심스럽게 섞은 후, 차가운 1.5mL tube에 100µL씩 분주(Aliquot)했다.
-            <div class="mechanism">💡 <strong>원리:</strong> <strong>DMSO</strong>는 양친매성 분자로 인지질 소수성 내부에 침투해 막 구조를 물리적으로 느슨하게 만들어 DNA 투과 경로를 형성한다. 녹는점이 18.5°C이므로 굳지 않게 실온 보관해야 한다.</div>
+            <div class="mechanism">💡 <strong>원리 :</strong> <strong>DMSO</strong>는 양친매성 분자로 인지질 소수성 내부에 침투해 막 구조를 물리적으로 느슨하게 만들어 DNA 투과 경로를 형성한다. 녹는점이 18.5°C이므로 굳지 않게 실온 보관해야 한다.</div>
         </li>
     </ol>
 
     <h3>1.2 형질전환 구동 (Transformation Procedure)</h3>
     <ol>
         <li>제조된 Competent Cell 용액 100µL에 pUC-GID 플라스미드 DNA 용액을 첨가했다 (세포 용액 부피의 1/10 이하로 조절).
-            <div class="mechanism">💡 <strong>원리:</strong> DNA 양이 너무 적으면 충돌 확률이 낮아 효율이 떨어지고, 너무 많으면 염 농도 증가로 효과가 저해되거나 세포 내 과도한 Burden 및 독성을 유발할 수 있다.</div>
+            <div class="mechanism">💡 <strong>원리 :</strong> DNA 양이 너무 적으면 충돌 확률이 낮아 효율이 떨어지고, 너무 많으면 염 농도 증가로 효과가 저해되거나 세포 내 과도한 Burden 및 독성을 유발할 수 있다.</div>
         </li>
         <li>가볍게 섞어준 후 얼음 위에서 30분간 정적 반응(Incubation)을 수행했다.
-            <div class="mechanism">💡 <strong>원리:</strong> 낮은 온도에서 분자 운동을 감소시켜 DNA-$Ca^{2+}$-세포막 복합체가 열역학적으로 안정되게 결합하도록 유도하며, Heat shock 시 진입의 출발점이 된다.</div>
+            <div class="mechanism">💡 <strong>원리 :</strong> 낮은 온도에서 분자 운동을 감소시켜 DNA-$Ca^{2+}$-세포막 복합체가 열역학적으로 안정되게 결합하도록 유도하며, Heat shock 시 진입의 출발점이 된다.</div>
         </li>
         <li><strong>42°C에서 정확히 40초간 가열(Heat shock)을 수행했다. (절대 흔들지 말 것)</strong>
-            <div class="mechanism">💡 <strong>원리:</strong> 인지질 막이 순간적으로 유동상(Fluid phase)으로 변하며 일시적인 구멍(Transient pore)이 생성되고, 농도 기울기에 의해 DNA가 세포 내로 흡수된다.</div>
+            <div class="mechanism">💡 <strong>원리 :</strong> 인지질 막이 순간적으로 유동상(Fluid phase)으로 변하며 일시적인 구멍(Transient pore)이 생성되고, 농도 기울기에 의해 DNA가 세포 내로 흡수된다.</div>
         </li>
         <li>직후 얼음으로 옮겨 2~5분간 급속 냉각했다.
-            <div class="mechanism">💡 <strong>원리:</strong> 열 스트레스로부터 세포를 보호하고, 느슨해진 막을 다시 굳혀 흡수된 DNA가 밖으로 새어나가지 않도록 가둔다.</div>
+            <div class="mechanism">💡 <strong>원리 :</strong> 열 스트레스로부터 세포를 보호하고, 느슨해진 막을 다시 굳혀 흡수된 DNA가 밖으로 새어나가지 않도록 가둔다.</div>
         </li>
         <li>항생제가 없는(Without antibiotics) 순수 LB 배지 500µL를 첨가했다.</li>
         <li>37°C 진탕배양기에서 1시간 동안 회복 배양(Shaking incubation)을 진행했다.
-            <div class="mechanism">💡 <strong>원리:</strong> 형질전환된 대장균이 플라스미드 내 항생제 내성 유전자를 전사·번역하여 내성 단백질을 세포막에 충분히 축적할 수 있도록 시간을 주는 필수 단계이다.</div>
+            <div class="mechanism">💡 <strong>원리 :</strong> 형질전환된 대장균이 플라스미드 내 항생제 내성 유전자를 전사·번역하여 내성 단백질을 세포막에 충분히 축적할 수 있도록 시간을 주는 필수 단계이다.</div>
         </li>
         <li>항생제(Ampicillin)가 포함된 LB 플레이트에 300µL를 도말(Spreading)하여 배양했다.</li>
     </ol>
 
     <h2>2. 결과 및 고찰 (Results & Discussion)</h2>
     
-    <p style="text-align: center; margin-top: 25px;">
-        <img src="image1.png" alt="형질전환 대장균 콜로니 생성 결과 플레이트" width="400">
-        <br><span style="font-size: 0.9em; color: #666;">[그림 1] Ampicillin 선택 배지 상에서 생장한 pUC-GID 형질전환 대장균 콜로니</span>
-    </p>
+    <div class="img-container">
+        <img src="image1.png" alt="형질전환 대장균 콜로니 생성 결과 플레이트" width="380">
+        <span class="img-caption">[그림 1] Ampicillin 선택 배지 상에서 생장한 pUC-GID 형질전환 대장균 콜로니</span>
+    </div>
 
     <h3>2.1 형질전환 효율(Transformation Efficiency; TE) 계산식</h3>
     <div class="formula-box">
@@ -162,34 +215,34 @@
 
     <h3>2.2 실험 데이터 기반 실제 TE 산출 과정</h3>
     <div class="calculation-box">
-        <p><strong>1) 총 Transformant 수 (CFU) 계산</strong></p>
+        <h4>1) 총 Transformant 수 (CFU) 계산</h4>
         <ul>
             <li>도말 후 생성된 콜로니 수 = <span class="highlight">219 개</span></li>
             <li>실험 총 부피 = 100µL(Cell) + 1µL(DNA) + 500µL(LB) = <span class="highlight">601 µL</span></li>
             <li>배지에 도말한 부피 = <span class="highlight">300 µL</span></li>
             <li>도말되지 않은 나머지 부피(301µL) 내의 잠재적 콜로니 비율을 반영하여 환산 계산:</li>
-            <li style="list-style-type: none; font-weight: bold; color: #2c3e50; margin-left: 10px;">
+            <li style="list-style-type: none; font-weight: bold; margin-top: 10px; padding-left: 5px;">
                 ➔ 총 Transformant 수 = 219 × (601 / 300) = 438.73 CFU
             </li>
         </ul>
 
-        <p><strong>2) 사용한 DNA 질량(µg) 환산</strong></p>
+        <h4>2) 사용한 DNA 질량(µg) 환산</h4>
         <ul>
             <li>사용한 pUC-GID DNA 원액 농도 = 75.7 ng/µL</li>
             <li>실험을 위해 원액을 <span class="highlight">100배 희석</span>하여 사용함 ➔ 희석 후 농도 = 0.757 ng/µL</li>
             <li>실험에 투입된 부피가 1µL이므로 사용한 DNA 질량 = 0.757 ng</li>
             <li>계산식 대입을 위해 ng 단위를 µg 단위로 환산 ($1\text{ }\mu\text{g} = 1,000\text{ }\text{ng}$):</li>
-            <li style="list-style-type: none; font-weight: bold; color: #2c3e50; margin-left: 10px;">
+            <li style="list-style-type: none; font-weight: bold; margin-top: 10px; padding-left: 5px;">
                 ➔ 사용한 DNA 양 = 0.000757 µg
             </li>
         </ul>
 
-        <p><strong>3) 최종 형질전환 효율(TE) 도출</strong></p>
-        <div style="font-size: 1.15em; color: #c0392b; font-weight: bold; text-align: center; margin-top: 15px;">
+        <h4>3) 최종 형질전환 효율(TE) 도출</h4>
+        <div style="font-size: 1.2em; font-weight: bold; text-align: center; margin: 25px 0; letter-spacing: 0.5px;">
             $$TE = \frac{438.73\text{ CFU}}{0.000757\text{ }\mu\text{g}} = 5.796 \times 10^5\text{ CFU/}\mu\text{g}$$
         </div>
-        <p style="margin-top: 15px; font-size: 0.95em; color: #2c3e50;">
-            <strong>결론 적 요약:</strong> 본 실험을 통해 도출된 형질전환 효율은 <strong>$5.796 \times 10^5\text{ CFU/}\mu\text{g}$</strong>이다. 이는 DNA 1µg을 대장균에 도입했을 때 약 58만 개의 형질전환된 콜로니를 얻을 수 있는 수준의 유효한 수용성 세포(Competent Cell)가 제조되었음을 증명한다.
+        <p style="margin-top: 15px; font-size: 0.95em; line-height: 1.6; color: #333333; border-top: 1px dashed #dddddd; padding-top: 15px;">
+            <strong>결론적 고찰 :</strong> 본 실험을 통해 도출된 형질전환 효율은 <strong>$5.796 \times 10^5\text{ CFU/}\mu\text{g}$</strong>이다. 이는 DNA 1µg을 대장균에 도입했을 때 약 58만 개의 형질전환된 콜로니를 얻을 수 있는 수준의 유효한 수용성 세포(Competent Cell)가 제조되었음을 증명한다.
         </p>
     </div>
 
