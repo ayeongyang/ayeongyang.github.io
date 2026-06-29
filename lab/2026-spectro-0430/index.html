@@ -134,6 +134,10 @@
             display: block;
         }
     </style>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
 </head>
 <body>
 
@@ -141,7 +145,7 @@
     
     <div class="meta-info">
         <p><strong>실험 일자 :</strong> 2026년 4월 30일</p>
-        <p><strong>보고서 작성자 :</strong> 양아영</p>
+        <p><strong>보고서 작성자 :</strong> 학번 2624110086 / 양아영</p>
     </div>
 
     <h2>1. 실험 목적 (Objective)</h2>
@@ -150,8 +154,8 @@
     <h2>2. 실험 원리 및 배경 (Background)</h2>
     <ul>
         <li><strong>분광광도법 :</strong> 시료 용액이 특정 파장의 빛을 흡수하는 정도(흡광도)를 측정하여 물질의 양을 분석하는 방법이다.</li>
-        <li><strong>비어-람베르트 법칙 (A = varepsilon cl) :</strong> 흡광도(A)는 시료의 농도 (c) 및 빛이 통과하는 슬릿 길이(l)에 비례한다.
-            <div class="mechanism">💡 <strong>원리 :</strong> 물질 고유의 흡광계수(varepsilon)가 일정할 때, 빛의 경로가 고정되면 흡광도는 오직 용액 내에 존재하는 광흡수 입자의 수(농도)에만 의존하게 되므로 정량 분석이 가능해진다.</div>
+        <li><strong>비어-람베르트 법칙 ($A = \varepsilon cl$) :</strong> 흡광도($A$)는 시료의 농도($c$) 및 빛이 통과하는 슬릿 길이($l$)에 비례한다.
+            <div class="mechanism"> <strong>원리 :</strong> 물질 고유의 흡광계수($\varepsilon$)가 일정할 때, 빛의 경로가 고정되면 흡광도는 오직 용액 내에 존재하는 광흡수 입자의 수(농도)에만 의존하게 되므로 정량 분석이 가능해진다.</div>
         </li>
         <li><strong>Brilliant Blue FCF :</strong> 식용색소 청색 1호로, 분자량은 792.85이며 최대 흡수 파장은 630nm이다. 본 실험은 가시광선 영역인 630nm 파장에서 진행되었다.</li>
     </ul>
@@ -163,7 +167,7 @@
     <ol>
         <li>5 mg/mL, 10 mg/mL 농도의 원액을 순차적으로 10배씩 단계별 희석을 수행하였다.</li>
         <li>모든 희석 단계는 이전 단계 용액 100µL에 증류수(DW) 900µL를 첨가하는 방식으로 균일하게 진행하여 <span class="highlight">0.5, 1, 5, 10 µg/mL</span> 등의 정밀 표준 용액을 제조했다.
-            <div class="mechanism">💡 <strong>원리 :</strong> 한 번에 미량의 질량을 달아 낮은 농도를 만드는 것보다, 고농도 원액을 제조한 뒤 파이펫팅을 통해 단계적으로 배율을 낮추는 것이 기기 오차와 인간의 계측 오차를 최소화하는 가장 신뢰도 높은 방법이다.</div>
+            <div class="mechanism"> <strong>원리 :</strong> 한 번에 미량의 질량을 달아 낮은 농도를 만드는 것보다, 고농도 원액을 제조한 뒤 파이펫팅을 통해 단계적으로 배율을 낮추는 것이 기기 오차와 인간의 계측 오차를 최소화하는 가장 신뢰도 높은 방법이다.</div>
         </li>
     </ol>
     
@@ -206,7 +210,7 @@
         <h4>2) 미지시료 #2 (100배 희석액)</h4>
         <ul>
             <li>측정된 흡광도 = <span class="highlight">0.120 A</span></li>
-            <li>회귀방정식(y=0.1394x) 대입 역산 시 희석 농도 (x) = 0.8608 µg/mL</li>
+            <li>회귀방정식($y=0.1394x$) 대입 역산 시 희석 농도 ($x$) = 0.8608 µg/mL</li>
             <li><strong>희석 배수(100배) 반영 최종 원액 농도 : 86.08 µg/mL</strong></li>
         </ul>
     </div>
