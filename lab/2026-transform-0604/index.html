@@ -15,7 +15,7 @@
             color: #222222;
         }
         h1 {
-            font-size: 1.7em;
+            font-size: 1.65em;
             color: #000000;
             margin-bottom: 5px;
         }
@@ -38,6 +38,7 @@
         li {
             margin-bottom: 6px;
         }
+        /* 실험 원리 글자들을 약간 연하게 처리하여 가독성을 높이는 설정 */
         .principle {
             color: #555555;
             font-size: 0.95em;
@@ -62,23 +63,23 @@
 
     <h3>2. 실험 재료 및 방법 (Materials & Methods)</h3>
     <p>
-        <strong>[사용 균주]</strong> <em>Escherichia coli</em> <strong>DH5-α (DH5-alpha)</strong><br>
-        <strong>[주요 재료]</strong> LB 배지, 2X TSS Buffer ($MgSO_4$, PEG-6000 포함), DMSO, 멸균수, 얼음, 42℃ 항온수조
+        <strong>[사용 균주]</strong> Escherichia coli (대장균) <strong>DH5-α (DH5-alpha) 균주</strong><br>
+        <strong>[주요 재료]</strong> LB 배지, 2X TSS Buffer (MgSO4, PEG-6000 포함), DMSO, 멸균수, 얼음, 42℃ 항온수조
     </p>
 
     <h4>① Competent Cell 준비 (Preparation)</h4>
     <ol>
         <li>단일 콜로니로부터 대장균을 37°C에서 O/N (Overnight) 진탕 배양하였습니다 (Preculture).</li>
         <li>5mL LB 배지에 전배양액 50µL를 접종한 후 본 배양을 수행했습니다.</li>
-        <li>배양액의 흡광도 $OD_{600}$ 값이 0.3~0.4 수준에 도달했을 때 성장을 급격히 중단시켰습니다.
-            <span class="principle">※ 원리: 세포 분열이 가장 활발한 대수생장기(Exponential phase)에 세포막이 가장 유동적입니다. 세포벽과 막 구조가 아직 완전히 굳지 않아 $Ca^{2+}$ 처리와 이후 heat shock에 반응하기 좋은 상태입니다.</span>
+        <li>배양액의 흡광도 OD600 값이 0.3~0.4 수준에 도달했을 때 성장을 급격히 중단시켰습니다.
+            <span class="principle">※ 원리: 세포 분열이 가장 활발한 대수생장기(Exponential phase)에 세포막이 가장 유동적입니다. 세포벽과 막 구조가 아직 완전히 굳지 않아 Ca2+ 처리와 이후 heat shock에 반응하기 좋은 상태입니다.</span>
         </li>
         <li>배양액을 15mL 튜브로 옮겨 얼음 위에서 10분간 방치한 후, 4°C 상태에서 4,000rpm으로 5분간 원심분리하여 세포를 침전시켰습니다.</li>
         <li>상층액을 날리고 멸균 처리된 차가운 LB 배지 625µL를 첨가해 세포 펠릿을 부드럽게 재부유시켰습니다.
             <span class="principle">※ 원리: 2X TSS를 희석해 최종 농도 1X로 맞춰주는 역할입니다. Ice-cold인 이유는 세포막을 낮은 온도로 유지해 세포막 유동성을 낮추고, 투과성 변화가 천천히 균일하게 일어나도록 하기 위함입니다.</span>
         </li>
         <li>차가운 상태의 2X TSS Buffer 500µL를 첨가하였습니다.
-            <span class="principle">※ 원리: PEG는 강한 흡수성 polymer로 주변의 물 분자를 끌어당겨 세포막 표면의 수화층을 탈수시키고 막 구조를 불안정하게 만듭니다. 이는 DNA와 세포막 사이의 물 분자 장벽을 제거해 DNA가 막에 더 가까이 접근할 수 있게 합니다. $MgSO_4$는 DNA backbone의 음전하를 중화시키는 역할을 하며, Nuclease가 활성화되어 DNA가 잘리는 것을 적절하게 억제합니다.</span>
+            <span class="principle">※ 원리: PEG는 강한 흡수성 polymer로 주변의 물 분자를 끌어당겨 세포막 표면의 수화층을 탈수시키고 막 구조를 불안정하게 만듭니다. 이는 DNA와 세포막 사이의 물 분자 장벽을 제거해 DNA가 막에 더 가까이 접근할 수 있게 합니다. MgSO4는 DNA backbone의 음전하를 중화시키는 역할을 하며, Nuclease가 활성화되어 DNA가 잘리는 것을 적절하게 억제합니다.</span>
         </li>
         <li>실온 보관된 DMSO 125µL를 첨가하고 가볍게 혼합한 뒤, 차가운 튜브에 100µL씩 정밀 분주하였습니다.
             <span class="principle">※ 원리: DMSO는 세포막 인지질의 소수성 내부에 직접 침투하는 양친매성 분자입니다. 인지질 사이에 끼어들면서 막을 물리적으로 느슨하게 만들어 DNA가 통과할 수 있는 미세한 불연속 지점을 만듭니다. 녹는점이 18.5°C이므로 고체로 굳지 않게 실온 보관해야 합니다.</span>
@@ -88,10 +89,10 @@
     <h4>② 형질전환 공정 (Transformation)</h4>
     <ol>
         <li>제조된 컴셀 100µL 용액에 1µL의 플라스미드 DNA를 첨가하였습니다.
-            <span class="principle">※ 원리: 외부 DNA의 부피는 컴셀 용액의 1/10을 넘지 않아야 합니다. DNA가 너무 적으면 세포당 DNA 충돌 확률이 낮아져 transformant 수가 감소하고, 반대로 너무 많으면 염 농도 증가로 $Ca^{2+}$ 효과 방해, 여러 개의 플라스미드가 한 세포에 들어가 불필요한 부담(Burden) 발생, 혹은 고농도 DNA 자체의 세포 독성이 작용할 수 있습니다.</span>
+            <span class="principle">※ 원리: 외부 DNA의 부피는 컴셀 용액의 1/10을 넘지 않아야 합니다. DNA가 너무 적으면 세포당 DNA 충돌 확률이 낮아져 transformant 수가 감소하고, 반대로 너무 많으면 염 농도 증가로 Ca2+ 효과 방해, 여러 개의 플라스미드가 한 세포에 들어가 불필요한 부담(Burden) 발생, 혹은 고농도 DNA 자체의 세포 독성이 작용할 수 있습니다.</span>
         </li>
         <li>얼음 위에서 30분간 조용히 방치하였습니다.
-            <span class="principle">※ 원리: 낮은 온도에서 DNA가 $Ca^{2+}$의 도움을 받아 세포막 표면에 천천히 결합합니다. 열역학적으로 낮은 온도는 분자 운동을 줄여 DNA-막 복합체가 안정적으로 형성되도록 하며, 이후 Heat shock에서 DNA 진입의 출발점이 됩니다.</span>
+            <span class="principle">※ 원리: 낮은 온도에서 DNA가 Ca2+의 도움을 받아 세포막 표면에 천천히 결합합니다. 열역학적으로 낮은 온도는 분자 운동을 줄여 DNA-막 복합체가 안정적으로 형성되도록 하며, 이후 Heat shock에서 DNA 진입의 출발점이 됩니다.</span>
         </li>
         <li>흔들림 없이 42°C 항온수조에서 정확히 40초간 열 충격(Heat Shock)을 가했습니다. (절대 흔들지 않음)
             <span class="principle">※ 원리: 42°C에서 세포막의 인지질이 순간적으로 유동상(Fluid phase)으로 전환되며 막에 일시적인 구멍(Transient pore)이 생깁니다. 이때 막 표면에 붙어있던 DNA가 농도 기울기를 따라 세포 안으로 빨려 들어갑니다.</span>
@@ -118,14 +119,16 @@
 
     <p><strong>[1] 총 Transformant 수 역산 (전체 부피 반영)</strong><br>
     도말하지 않은 나머지 부피 안의 콜로니 비율까지 고려하기 위해 총 부피 대비 배수를 계산합니다.<br>
-    $$\text{총 Transformant 수} = 219 \text{ CFU} \times \frac{601\,\mu\text{L}}{300\,\mu\text{L}} = 438.73 \text{ CFU}$$</p>
+    • 계산식: 219 CFU × (601 µL / 300 µL) = <strong>438.73 CFU</strong></p>
 
-    <p><strong>[2] 사용한 플라스미드 DNA 질량 환산 ($\mu\text{g}$)</strong><br>
-    실험에 사용한 pUC-GID 플라스미드의 원액 농도는 75.7 ng/µL이며, 이를 100배 희석하여 1µL 투입했으므로 실제 들어간 DNA 질량은 0.757 ng입니다. 효율 계산식의 단위인 $\mu\text{g}$으로 환산합니다.<br>
-    $$0.757 \text{ ng} \div 1,000 = 0.000757 \text{ }\mu\text{g}$$</p>
+    <p><strong>[2] 사용한 플라스미드 DNA 질량 환산 (µg)</strong><br>
+    실험에 사용한 pUC-GID 플라스미드의 원액 농도는 75.7 ng/µL이며, 이를 100배 희석하여 1µL 투입했으므로 실제 들어간 DNA 질량은 0.757 ng입니다. 효율 계산식의 단위인 µg으로 환산합니다.<br>
+    • 계산식: 0.757 ng ÷ 1,000 = <strong>0.000757 µg</strong></p>
 
     <p><strong>[3] 최종 형질전환 효율 (Transformation Efficiency) 도출</strong><br>
-    $$TE = \frac{\text{총 Transformant 수 (CFU)}}{\text{사용한 DNA 양 (}\mu\text{g}\text{)}} = \frac{438.73 \text{ CFU}}{0.000757 \text{ }\mu\text{g}} = 5.796 \times 10^5 \text{ CFU/}\mu\text{g}$$</p>
+    • 계산 공식: TE = 총 Transformant 수 (CFU) ÷ 사용한 DNA 양 (µg)<br>
+    • 수치 대입: 438.73 CFU ÷ 0.000757 µg<br>
+    • 최종 결과: <strong>TE = 5.796 × 10<sup>5</sup> CFU/µg</strong></p>
 
     <p style="text-align: center; margin: 20px 0;">
         <img src="image1.png" width="350" style="border: 1px solid #ddd;" alt="대장균 콜로니"><br>
@@ -133,8 +136,8 @@
     </p>
 
     <h4>② 결과 해석 및 고찰 (Discussion)</h4>
-    <p>본 실험에서 유도된 최종 형질전환 효율($5.796 \times 10^5 \text{ CFU/}\mu\text{g}$)은 일반적인 화학적 수용성 세포(Chemical Competent Cell) 제조 공정에서 기대할 수 있는 유효 신뢰구간($10^5 \sim 10^7 \text{ CFU/}\mu\text{g}$)에 정확히 부합하는 성공적인 결과입니다. 사용한 <strong>DH5-α</strong> 균주는 클로닝 및 플라스미드 증폭에 최적화된 균주로서 외부 플라스미드를 안정적으로 수용했음이 증명되었습니다.</p>
-    <p>실험의 주요 성공 요인은 $OD_{600}$ 값을 0.3~0.4 수준의 대수생장기에서 정밀하게 제어하여 세포막의 유동성을 최상으로 확보한 점, 그리고 2X TSS Buffer 및 DMSO 처리 과정에서 시약과 튜브를 극저온 상태로 철저히 유지하여 세포막의 불필요한 손상을 방지한 점으로 분석됩니다.</p>
+    <p>본 실험에서 유도된 최종 형질전환 효율(5.796 × 10<sup>5</sup> CFU/µg)은 일반적인 화학적 수용성 세포(Chemical Competent Cell) 제조 공정에서 기대할 수 있는 유효 신뢰구간(10<sup>5</sup> ~ 10<sup>7</sup> CFU/µg)에 정확히 부합하는 성공적인 결과입니다. 사용한 <strong>DH5-α</strong> 균주는 클로닝 및 플라스미드 증폭에 최적화된 균주로서 외부 플라스미드를 안정적으로 수용했음이 증명되었습니다.</p>
+    <p>실험의 주요 성공 요인은 OD600 값을 0.3~0.4 수준의 대수생장기에서 정밀하게 제어하여 세포막의 유동성을 최상으로 확보한 점, 그리고 2X TSS Buffer 및 DMSO 처리 과정에서 시약과 튜브를 극저온 상태로 철저히 유지하여 세포막의 불필요한 손상을 방지한 점으로 분석됩니다.</p>
 
 </body>
 </html>
