@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[실습] 아세트아미노펜(AA) 표준용액 검량선 및 타이레놀·미지시료 정량 분석</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.8;
+            font-family: 'Malgun Gothic', sans-serif;
+            color: #222222;
+        }
+        h1 {
+            font-size: 1.65em;
+            color: #000000;
+            margin-bottom: 5px;
+        }
+        h3 {
+            font-size: 1.25em;
+            color: #000000;
+            border-bottom: 1px solid #222222;
+            padding-bottom: 5px;
+            margin-top: 35px;
+        }
+        h4 {
+            font-size: 1.05em;
+            color: #333333;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        .principle {
+            color: #555555;
+            font-size: 0.95em;
+            padding-left: 10px;
+            margin-top: 2px;
+            margin-bottom: 12px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🔬 [실습] 아세트아미노펜(AA) 표준용액 검량선 및 타이레놀·미지시료 정량 분석</h1>
+    <p style="color: #666666;">실험 일자: 2026년 11월 11일 | 작성자: 양아영</p>
+
+    <h3>1. 서론 (Introduction)</h3>
+    <p>본 실험의 목적은 아세트아미노펜(Acetaminophen, AA) 표준용액(Standard Solution)을 제조하고 크로마토그래피/기기 분석 데이터로부터 검량선(Calibration Curve)을 작성하여, 타이레놀(Tylenol) 제제 및 미지시료(Unknown Sample) 내 아세트아미노펜 함량을 정량 분석하는 것입니다.</p>
+    <ul>
+        <li><strong>아세트아미노펜(Acetaminophen, AA):</strong> 해열·진통제 성분으로, 표준용액 검량선을 통해 시료의 피크 면적(Area) 및 머무름 시간(RT)을 비교·정량합니다.</li>
+        <li><strong>타이레놀 시료 정량:</strong> 희석 및 함량 환산 과정을 거쳐 이론치·표시치 대비 실제 측정값의 오차율을 평가합니다.</li>
+    </ul>
+
+    <h3>2. 실험 재료 및 방법 (Materials & Methods)</h3>
+    <p>
+        <strong>[분석 대상]</strong> 아세트아미노펜(AA) 표준용액, 타이레놀 시료, 미지시료(AA)<br>
+        <strong>[주요 내용]</strong> AA Stock Solution(104 ppm) 제조, 희석 표준용액 조제, 타이레놀 50배 희석 정량, 미지시료 AA 정량
+    </p>
+
+    <h4>① 표준용액 조제 (Standard Solution Preparation)</h4>
+    <ol>
+        <li>100 mL 부피에 아세트아미노펜 0.104 g을 용해하여 <strong>104 ppm</strong> 표준원액(Stock Solution)을 조제했습니다.</li>
+        <li>104 ppm 원액을 각각 20배, 10배, 5배 희석하여 최종 부피(Total Volume) 10 mL씩 표준용액을 제조했습니다.
+            <span class="principle">※ 희석 비율(Total 10 mL 기준): 20배 희석(9.5 mL + 0.5 mL) → 약 5.2 ppm / 10배 희석(9 mL + 1 mL) → 약 10.4 ppm / 5배 희석(8 mL + 2 mL) → 약 20.8 ppm</span>
+        </li>
+    </ol>
+
+    <h4>② 시료 희석 및 정량 분석 (Sample Dilution & Quantification)</h4>
+    <ol>
+        <li><strong>타이레놀 시료:</strong> 100 mg / 200 mL 조건을 기준으로 50배 희석하여 정량을 수행했습니다.</li>
+        <li><strong>미지시료:</strong> 미지시료 내 아세트아미노펜(AA) 농도를 검량선을 이용해 정량 분석했습니다.</li>
+    </ol>
+
+    <h3>3. 결과 및 고찰 (Results & Discussion)</h3>
+
+    <h4>① 크로마토그래피/기기 측정 데이터 (RT & Area)</h4>
+    <ul>
+        <li><strong>5.2 ppm (20배 희석):</strong> RT = 3.103 | Area = 287.94211</li>
+        <li><strong>10.4 ppm (10배 희석):</strong> RT = 3.099 | Area = 584.14288</li>
+        <li><strong>20.8 ppm (5배 희석):</strong> RT = 3.100 | Area = 1182.94348</li>
+        <li><strong>타이레놀:</strong> RT = 3.098 | Area = 460.85263</li>
+        <li><strong>미지시료 (AA):</strong> RT = 3.099 | Area = 781.96362</li>
+    </ul>
+
+    <h4>② 검량선 및 시료 정량 결과</h4>
+    <ul>
+        <li><strong>표준 검량선 결정계수 및 회귀식:</strong> R² = 0.99996, y = 56.96078 + (-4.58328)x</li>
+        <li><strong>타이레놀 정량 결과:</strong> 8.171 ppm</li>
+        <li><strong>미지시료 (AA) 정량 결과:</strong> 13.809 ppm</li>
+    </ul>
+
+    <h4>③ 타이레놀 함량 환산 및 오차 계산</h4>
+    <p><strong>[1] 주성분 비율 및 질량 환산</strong><br>
+    - 비율 계산: 500 mg / 614.7 mg ≈ 81.3386%<br>
+    - 100 mg 기준 환산: 100 mg × 0.813386 = <strong>81.336 mg</strong></p>
+
+    <p><strong>[2] 부피 기준 농도 및 50배 희석 농도 계산</strong><br>
+    - 200 mL 기준 농도: 81.3386 mg / 200 mL = 0.406693 mg/mL = <strong>406.693 ng/µL</strong><br>
+    - 50배 희석 후 농도: 406.693 ng/µL ÷ 50 = <strong>8.134 ng/µL</strong></p>
+
+    <p><strong>[3] 상대 오차 산출</strong><br>
+    - 최종 오차: <strong>0.46%</strong></p>
+
+    <h4>④ 결과 해석 및 고찰 (Discussion)</h4>
+    <p>표준용액(5.2 ppm, 10.4 ppm, 20.8 ppm)의 머무름 시간(RT)이 약 3.099~3.103 범위에서 매우 일정하게 나타났으며, 검량선의 결정계수(R² = 0.99996) 역시 1에 극도로 근접하여 정량 분석의 직선성과 재현성이 매우 우수함을 확인했습니다. 또한 타이레놀 시료 정량 및 환산 결과에서 오차가 <strong>0.46%</strong> 수준으로 나타나 실험 조작 및 희석 과정의 정밀도가 높음을 입증했습니다.</p>
+
+    <hr style="border: 0; border-top: 1px solid #222222; margin: 40px 0 20px 0;">
+    <p style="text-align: center;"><a href="../../" style="color: #000000; font-weight: bold; text-decoration: none;">메인 포트폴리오로 돌아가기</a></p>
+
+</body>
+</html>
