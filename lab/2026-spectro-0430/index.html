@@ -86,4 +86,28 @@
     <h4>② 검량선 회귀방정식 도출</h4>
     <p>선형 회귀 분석을 통해 도출된 직선의 방정식은 <strong>y = 0.1394x</strong> 이며, 이때의 결정계수 <strong>R² = 0.9994</strong> 입니다. R² 값이 1에 매우 가까우므로 본 분석 데이터의 직선성과 신뢰성이 매우 높음을 입증하였습니다.</p>
 
-    <p style="text-align: center; margin:
+    <p style="text-align: center; margin: 20px 0;">
+        <img src="image1.png" width="600" style="border: 1px solid #ddd;" alt="Brilliant Blue FCF 검량선"><br>
+        <span style="font-size: 0.9em; color: #666;">[그림 1] 630nm 파장에서 측정한 Brilliant Blue FCF 표준 용액 검량선 (y = 0.1394x, R² = 0.9994)</span>
+    </p>
+
+    <h4>③ 미지 시료 농도 역산 결과</h4>
+    <ul>
+        <li><strong>미지시료 #1 (1,000배 희석액 흡광도 0.304A):</strong> 회귀식 대입 시 x = 2.181 µg/mL ➔ 원래 농도: <strong>2,181.77 µg/mL</strong></li>
+        <li><strong>미지시료 #2 (100배 희석액 흡광도 0.120A):</strong> 회귀식 대입 시 x = 0.861 µg/mL ➔ 원래 농도: <strong>86.1 µg/mL</strong></li>
+    </ul>
+
+    <h3>5. 고찰 및 주의사항 (Discussion)</h3>
+    <ul>
+        <li><strong>직선성의 한계와 재희석:</strong> 흡광도가 너무 높거나 낮은 구간에서는 직선성이 무너지므로, 검량선 범위(0.5 ~ 10 µg/mL) 내에 포함되도록 미지 시료를 각각 100배, 1,000배로 적절히 단계별 희석하여 정량의 정확성을 확보했습니다.</li>
+        <li><strong>실험 오차 방지 주의사항:</strong> 큐벳의 투명한 면을 손으로 만지면 지문에 의해 빛이 산란되어 오차가 발생하므로 취급 시 주의가 필요하며, 매 측정 전 Blank로 영점을 잡는 프로세스의 중요성을 확인하였습니다.</li>
+    </ul>
+
+    <h3>6. 결론 (Conclusion)</h3>
+    <p>표준 용액의 농도와 흡광도 간의 선형 관계를 성공적으로 입증하였으며, 데이터 신뢰성 검증(R²=0.9994)을 통해 높은 정확도의 실험 수행 능력을 확인하였습니다. 도출된 검량선을 활용하여 미지 시료의 원래 농도를 성공적으로 정량 분석하였습니다.</p>
+
+    <hr style="border: 0; border-top: 1px solid #222222; margin: 40px 0 20px 0;">
+    <p style="text-align: center;"><a href="../../" style="color: #000000; font-weight: bold; text-decoration: none;">메인 포트폴리오로 돌아가기</a></p>
+
+</body>
+</html>
