@@ -3,15 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[실습 02] 플라스미드 DNA 추출 및 전기영동</title>
+    <title>[실습 02] 플라스미드 DNA 추출 및 아가로스 겔 전기영동 분석 결과 보고서</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.8;
+            font-family: 'Malgun Gothic', sans-serif;
+            color: #222222;
+        }
+        h1 {
+            font-size: 1.65em;
+            color: #000000;
+            margin-bottom: 5px;
+        }
+        h3 {
+            font-size: 1.25em;
+            color: #000000;
+            border-bottom: 1px solid #222222;
+            padding-bottom: 5px;
+            margin-top: 35px;
+        }
+        h4 {
+            font-size: 1.05em;
+            color: #333333;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        /* 실험 원리 글자들을 약간 연하게 처리하여 가독성을 높이는 설정 */
+        .principle {
+            color: #555555;
+            font-size: 0.95em;
+            padding-left: 10px;
+            margin-top: 2px;
+            margin-bottom: 12px;
+            display: block;
+        }
+    </style>
 </head>
-    
 <body>
 
     <h1>🔬 [실습 02] 플라스미드 DNA 추출 및 아가로스 겔 전기영동 분석 결과 보고서</h1>
-    <p>실험 일자: 2026년 5월 26일 / 2026년 6월 2일 | 작성자: 양아영</p>
-
-    <hr>
+    <p style="color: #666666;">실험 일자: 2026년 5월 26일 / 2026년 6월 2일 | 작성자: 양아영</p>
 
     <h3>1. 서론 (Introduction)</h3>
     <p>본 실험의 목적은 서로 다른 항생제 저항성 유전자를 가진 두 플라스미드 벡터(pET28a, pUC-GID)를 고순도로 추출하고, 아가로스 겔 전기영동을 통해 플라스미드의 크기와 구조적 형태(Topology)를 확인하는 것입니다.</p>
@@ -21,6 +61,10 @@
     </ul>
 
     <h3>2. 실험 재료 및 방법 (Materials & Methods)</h3>
+    <p>
+        <strong>[대상 벡터]</strong> pET28a, pUC-GID<br>
+        <strong>[주요 재료]</strong> LB 배지, Kanamycin, Ampicillin, Resuspension Buffer(EDTA, RNase A 포함), Lysis Buffer(SDS, NaOH 포함), Neutralization Buffer(Potassium Acetate 포함), Mini Column, Washing Buffer A/B, Elution Buffer, 0.5X TAE Buffer, Agarose, Eco Dye, 6X Loading Buffer, 1kb DNA Ladder
+    </p>
 
     <h4>① 균주 배양 및 수확 (Cell Cultivation & Harvest)</h4>
     <ol>
@@ -32,20 +76,20 @@
     <p><strong>주요 원리:</strong> Alkaline Lysis Method (알칼리 용해법)를 기반으로 고분자 genomic DNA와 플라스미드 DNA의 물리화학적 성질 차이를 이용합니다.</p>
     <ol>
         <li><strong>재부유 (Resuspension):</strong> 세포 펠릿에 Resuspension Buffer 250µL를 첨가하고 볼텍싱하여 세포를 균일하게 분산시켰습니다.
-            <br>*원리: Buffer에 포함된 EDTA가 2가 양이온을 킬레이팅하여 외막을 불안정화하고, DNA 분해 효소인 DNase의 활성을 완전히 억제하여 플라스미드를 보호합니다. 또한 RNase A가 선제적으로 포함되어 후속 단계에서 RNA를 분해합니다.
+            <span class="principle">※ 원리: Buffer에 포함된 EDTA가 2가 양이온을 킬레이팅하여 외막을 불안정화하고, DNA 분해 효소인 DNase의 활성을 완전히 억제하여 플라스미드를 보호합니다. 또한 RNase A가 선제적으로 포함되어 후속 단계에서 RNA를 분해합니다.</span>
         </li>
         <li><strong>세포 용해 (Lysis):</strong> Lysis Buffer 250µL를 첨가한 후, 튜브를 조심스럽게 십여 차례 뒤집어 섞었습니다.
-            <br>*원리: 계면활성제인 SDS가 세포막의 인지질과 단백질을 가용화하여 세포를 깨뜨리며, 강알칼리성인 NaOH가 환경을 pH 12~12.5로 높여 genomic DNA와 플라스미드 DNA를 모두 단일 가닥(Single-strand)으로 변성시킵니다.
+            <span class="principle">※ 원리: 계면활성제인 SDS가 세포막의 인지질과 단백질을 가용화하여 세포를 깨뜨리며, 강알칼리성인 NaOH가 환경을 pH 12~12.5로 높여 genomic DNA와 플라스미드 DNA를 모두 단일 가닥(Single-strand)으로 변성시킵니다.</span>
         </li>
         <li><strong>중화 (Neutralization):</strong> Neutralization Buffer 350µL를 첨가하고 다시 십여 차례 뒤집어 섞었습니다.
-            <br>*원리: Potassium Acetate(산성)에 의해 pH가 급격히 중성으로 복원됩니다. 이때 크기가 작고 꼬인 구조를 유지하던 플라스미드는 빠르게 상보적 가닥을 찾아 재연합되지만, 거대한 genomic DNA는 미처 결합하지 못하고 단백질-SDS 복합체와 엉겨 붙어 거대한 흰색 침전물을 형성합니다.
+            <span class="principle">※ 원리: Potassium Acetate(산성)에 의해 pH가 급격히 중성으로 복원됩니다. 이때 크기가 작고 꼬인 구조를 유지하던 플라스미드는 빠르게 상보적 가닥을 찾아 재연합되지만, 거대한 genomic DNA는 미처 결합하지 못하고 단백질-SDS 복합체와 엉겨 붙어 거대한 흰색 침전물을 형성합니다.</span>
         </li>
         <li><strong>원심분리 및 로딩:</strong> 13,000rpm에서 10분간 원심분리하여 변성된 염색체 DNA와 세포잔해물이 뭉친 흰색 침전물을 가라앉히고, 수용액 상에 녹아있는 플라스미드 포함 상층액만을 미니 컬럼(Mini Column)으로 옮겼습니다.</li>
         <li><strong>결합 및 세척 (Binding & Washing):</strong> 13,000rpm에서 1분간 원심분리하여 DNA를 컬럼의 실리카 막에 흡착시킨 후 통과액을 제거했습니다. 이후 Washing Buffer A 500µL와 Washing Buffer B 700µL를 순차적으로 로딩하여 동일한 조건으로 원심분리하고 잔류 단백질, 염(Salt) 등 불순물을 세척했습니다.
-            <br>*원리: 고농도의 Chaotropic Salt 존재 하에서 플라스미드 DNA 주변의 수화층이 탈수되어 실리카 막과 음전하 간 친화성 결합이 유도됩니다. 이후 에탄올이 포함된 Washing buffer로 불순물만 씻어내고 DNA는 흡착 상태를 유지합니다.
+            <span class="principle">※ 원리: 고농도의 Chaotropic Salt 존재 하에서 플라스미드 DNA 주변의 수화층이 탈수되어 실리카 막과 음전하 간 친화성 결합이 유도됩니다. 이후 에탄올이 포함된 Washing buffer로 불순물만 씻어내고 DNA는 흡착 상태를 유지합니다.</span>
         </li>
         <li><strong>건조 및 용출 (Dry & Elution):</strong> 컬럼 내부의 잔류 에탄올을 완전히 제거하기 위해 빈 컬럼 상태로 13,000rpm에서 1분간 추가 원심분리를 했습니다. 컬럼을 새 튜브에 장착한 후, Elution Buffer 50µL를 막 중심에 로딩하고 2~3분간 방치한 뒤 1분간 원심분리하여 고순도의 플라스미드 DNA 용액을 얻었습니다.
-            <br>*원리: 저농도의 수용성 완충액(Tris-Cl, pH 8.5) 또는 멸균수가 실리카 막에 유입되면 실리카와 DNA 사이의 결합이 깨어지며 순수한 플라스미드 수용액이 용출됩니다. 잔류 에탄올이 남으면 후속 전기영동 시 샘플이 웰 밖으로 뜨므로 건조 단계가 필수적입니다.
+            <span class="principle">※ 원리: 저농도의 수용성 완충액(Tris-Cl, pH 8.5) 또는 멸균수가 실리카 막에 유입되면 실리카와 DNA 사이의 결합이 깨어지며 순수한 플라스미드 수용액이 용출됩니다. 잔류 에탄올이 남으면 후속 전기영동 시 샘플이 웰 밖으로 뜨므로 건조 단계가 필수적입니다.</span>
         </li>
     </ol>
 
@@ -57,16 +101,19 @@
         <li><strong>젤 캐스팅 (Casting):</strong> 젤 트레이에 웰을 형성할 콤을 장착한 후, 준비된 아가로스 용액을 기포가 생기지 않도록 주의하며 서서히 부었습니다.</li>
         <li><strong>굳히기 및 콤 제거:</strong> 실온에서 30~40분간 방치하여 젤이 불투명하게 완전히 굳으면, 콤을 수직으로 올려 DNA를 로딩할 웰을 형성했습니다.</li>
         <li><strong>샘플 및 마커 로딩 (Sample Loading):</strong> 추출한 플라스미드 DNA 5µL에 6X Loading Buffer를 첨가하여 최종 부피 6µL로 균일하게 혼합한 후 웰에 로딩했습니다. 플라스미드의 크기를 비교 및 측정하기 위해 1kb DNA Ladder 5µL를 별도의 웰에 병렬로 로딩했습니다.
-            <br>*원리: Loading Buffer 속 글리세롤 성분이 샘플의 밀도를 높여 웰 바닥에 안정적으로 가라앉게 하며, tracking dye인 BPB와 XC가 전개 속도를 시각적으로 보여주어 전기영동 종료 시점을 가늠하게 합니다.
+            <span class="principle">※ 원리: Loading Buffer 속 글리세롤 성분이 샘플의 밀도를 높여 웰 바닥에 안정적으로 가라앉게 하며, tracking dye인 BPB와 XC가 전개 속도를 시각적으로 보여주어 전기영동 종료 시점을 가늠하게 합니다.</span>
         </li>
         <li><strong>전기영동 구동:</strong> 젤 탱크에 100V의 전압을 인가하여 DNA가 음극(-)에서 양극(+)으로 이동하도록 전압과 시간을 조절하여 전개를 수행했습니다.
-            <br>*원리: DNA 뼈대의 인산기가 강한 음전하를 띠기 때문에 인가된 전기장 내에서 양극으로 이동합니다. 이때 아가로스 겔 격자망 구조에 의해 크기가 작고 조밀한 DNA 가닥일수록 더 빠르게 이동하여 크기별 분리가 일어납니다.
+            <span class="principle">※ 원리: DNA 뼈대의 인산기가 강한 음전하를 띠기 때문에 인가된 전기장 내에서 양극으로 이동합니다. 이때 아가로스 겔 격자망 구조에 의해 크기가 작고 조밀한 DNA 가닥일수록 더 빠르게 이동하여 크기별 분리가 일어납니다.</span>
         </li>
     </ol>
 
     <h3>3. 결과 및 고찰 (Results & Discussion)</h3>
-    <p><img src="image1.png" width="420"></p>
-    <p>*참고: [그림 1] 아가로스 겔 전기영동 분석 결과 (좌 : pUC-GID / 우 : pET28a)</p>
+
+    <p style="text-align: center; margin: 20px 0;">
+        <img src="image1.png" width="420" style="border: 1px solid #ddd;" alt="아가로스 겔 전기영동 분석 결과"><br>
+        <span style="font-size: 0.9em; color: #666;">[그림 1] 아가로스 겔 전기영동 분석 결과 (좌 : pUC-GID / 우 : pET28a)</span>
+    </p>
 
     <ul>
         <li>사진 상 가장 밝고 뚜렷하게 나타난 하단의 주 밴드는 격자망을 가장 잘 빠져나간 <strong>Supercoiled(초나선) 형태</strong>입니다.</li>
@@ -74,9 +121,8 @@
         <li>밴드 하단이나 웰 주변에 끌림 현상(Smearing)이 거의 관찰되지 않았습니다. 이는 단백질이나 대장균의 genomic DNA 등의 불순물이 세포 침전 및 중화 단계에서 효과적으로 차단 및 제거되었음을 의미하며, 고순도의 플라스미드가 정상적으로 추출되었음을 증명합니다.</li>
     </ul>
 
-    <br><hr><br>
-
-    <a href="../../">메인 포트폴리오로 돌아가기</a>
+    <hr style="border: 0; border-top: 1px solid #222222; margin: 40px 0 20px 0;">
+    <p style="text-align: center;"><a href="../../" style="color: #000000; font-weight: bold; text-decoration: none;">메인 포트폴리오로 돌아가기</a></p>
 
 </body>
 </html>
